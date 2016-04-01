@@ -1,0 +1,86 @@
+https://numer.ai
+
+
+Numerai Tournament Mechanics
+============================
+
+Here we discuss data, tournament evaluation, originality, and payouts.
+
+
+Training Data
+-------------
+
+`numerai_training_data.csv`
+
+Use this dataset to train your machine learning algorithm. The first 21
+columns (`feature1` - `feature21`) are features, and `target` is the binary
+class you’re trying to predict.
+
+
+Tournament Data
+---------------
+
+`numerai_tournament_data.csv`
+
+Once you’ve built your model, you can use it to generate probability estimates
+on this new dataset.
+
+
+Upload Predictions
+------------------
+
+You can then upload your predictions, and see how well your model performed
+versus the other tournament participants. The format of your prediction upload
+should be a csv with two columns `t_id` and `probability`.
+
+To upload your predictions, login and click the *Upload Predictions* button on
+the homepage. Your score will appear on the leaderboard.
+
+
+Evaluation
+----------
+
+To be successful a lot of your predictions need to be correct, and where your
+model shows the most confident predictions, it need to be especially correct
+then. We evaluate your models with the [Logarithmic Loss measure](1)
+We only report your score on roughly 33% of the predictions you submit. We
+will calculate your final score on roughly the other 67% when the tournament
+ends. This prevents overfitting. We evaluate your score based on your most
+recent submission which may not necessarily be your best.
+
+[1] (https://www.kaggle.com/wiki/LogarithmicLoss)
+
+
+Originality
+-----------
+
+In addition to rewarding models with the best Logarithmic Loss, we also reward
+the most original models. Original models are uncorrelated with other models
+because they are creative. Since originality is a function of other user models,
+it will change dynamically even if you don't submit new predictions and the
+scoring procedure itself will evolve.
+
+
+Payouts
+-------
+
+The leaderboard will change frequently as new predictions are uploaded so
+payouts will change too. To receive payment, you need to have placed in the top
+25 of leaderboard when the timer runs out or you have originality. The final
+positions will be determined on the 67% held out set. If your model has overfit
+the leaderboard, you might place significantly worse on the final 67%. If you
+place in the top 25, you need apply your model to a new live dataset to claim
+your prize. Remember to store your most recent model in case you win. If you
+win, we will email you a link to a live encrypted dataset to predict on when the
+timer runs out. You’ll have 24 hours to use your model to predict on this
+dataset. By requiring that you upload predictions, instead of the code related
+to your model, we ensure that you can retain all intellectual property rights to
+your model. You never have to tell us how you built your model. It’s yours
+forever, and you can apply your ideas to all of our subsequent tournaments.
+
+We want you to be able to remain completely anonymous on Numerai. We to be able
+to pay you automatically wherever you are. So all our user payouts are in
+Bitcoin.
+
+
+https://numer.ai
